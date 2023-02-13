@@ -19,8 +19,9 @@ const RankItems = () => {
     return (
         <main>
             {
-                (items != null) ? items.map(item) => <h3>{item.title}</h3> : <div>Loading...</div>
+                (items != null) ? items.map((item) => <h3>{item.title}</h3>) : <div>Loading...</div>
             }
         </main>
         )
 }
+export default RankItems;
