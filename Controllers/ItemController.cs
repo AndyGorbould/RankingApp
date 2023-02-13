@@ -36,6 +36,6 @@ namespace RankingApp.Controllers
         {
             ItemModel[] items = Items.Where(i => i.ItemType == itemType).ToArray();
             return items;
-        };
+        }
     }
 }
