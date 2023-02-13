@@ -24,14 +24,14 @@ const RankingGrid = ({ items, imgArr }) => {
         }
     }
 
-    function createCellsForWor(rowNum) {
+    function createCellsForRow(rowNum) {
         var rankNum = 0;
         var currCollection = [];
         var label = "";
         const numCells = 5;
 
         for (var a = 1; a <= numCells; a++) {
-            rankNum = (a === 1) ? 0 : (numCells - 1)) + a - rowNum;
+            rankNum = (a === 1) ? 0 : (numCells - 1) + a - rowNum;
 
             if (rowNum === 1) {
                 currCollection = cellCollectionTop;
@@ -56,7 +56,7 @@ const RankingGrid = ({ items, imgArr }) => {
     function createCellsForRows() {
         const maxRows = 4;
         for (var row = 1; row <= maxRows; row++) {
-            creteCellsForRow(row);
+            createCellsForRow(row);
         }
     }
 
