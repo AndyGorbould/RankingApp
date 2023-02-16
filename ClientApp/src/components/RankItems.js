@@ -54,10 +54,11 @@ const RankItems = ({ items, setItems, dataType, imgArr, localStorageKey }) => {
         if (items != null) {
             localStorage.setItem(localStorageKey, JSON.stringify(items));
         }
+        setReload(false);
     }, [items])
 
     useEffect(() => {
-        of(reload === true) {
+        if(reload === true); {
 
             getDataFromApi();
         }
@@ -68,7 +69,7 @@ const RankItems = ({ items, setItems, dataType, imgArr, localStorageKey }) => {
         <main>
             <RankingGrid items={items} imgArr={imgArr} drag={drag} allowDrop={allowDrop} drop={drop} />
                 <ItemCollection item={items} drag={drag} imgArr={imgArr} />
-                <button onClick={Reload} style={{"marginTop": "10px""}}>Reload</button>
+                <button onClick={Reload} style={{"marginTop": "10px"}}>Reload</button>
             </main>
             : <main >Loading...</main >
         )
