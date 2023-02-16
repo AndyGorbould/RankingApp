@@ -3,10 +3,7 @@ import MovieImageArr from "./MovieImages.js";
 import RankingGrid from "./RankingGrid.js";
 import ItemCollection from "./ItemCollection.js"
 
-const RankItems = () => {
-
-    const [items, setItems] = useState([]);
-    const dataType = 1;
+const RankItems = ({ items, setItems, dataType, imgArr, localStorageKey }) => {
 
     function drag(ev) {
         ev.dataTransfer.setData("text", ev.target.id);
