@@ -9,6 +9,6 @@ const ItemCollection = ({ items, drag, imgArr }) => {
                     : null)
             }
         </div>
-        )
+    )
 }
 export default ItemCollection;
