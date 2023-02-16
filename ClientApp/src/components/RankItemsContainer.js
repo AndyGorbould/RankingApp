@@ -1,4 +1,5 @@
 ﻿import { useState } from 'react';
+import RankItems from './RankItems'
 
 const RankItemsContainer = ({ dataType, imgArr }) => {
     const albumLocalStorageKey = "albums";

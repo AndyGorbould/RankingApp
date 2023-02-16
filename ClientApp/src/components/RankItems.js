@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react';
+﻿import { useEffect } from 'react';
 import MovieImageArr from "./MovieImages.js";
 import RankingGrid from "./RankingGrid.js";
 import ItemCollection from "./ItemCollection.js"
@@ -37,13 +37,21 @@ const RankItems = ({ items, setItems, dataType, imgArr, localStorageKey }) => {
                 setItems(data);
             })
 
-    },[])
+    }, [dataType]);
+
+    useEffect(() => {
+        if (items != null) {
+            localStorage.setItem(localStorageKey, JSON.stringify(items));
+        }
+    },[items])
 
     return (
+        (items != null) ?
         <main>
-            <RankingGrid items={items} imgArr={MovieImageArr} drag={drag} allowDrop={allowDrop} drop={drop} />
-            <ItemCollection item={items} drag={drag} imgArr={MovieImageArr} />
-        </main>
+            <RankingGrid items={items} imgArr={imgArr} drag={drag} allowDrop={allowDrop} drop={drop} />
+            <ItemCollection item={items} drag={drag} imgArr={imgArr} />
+            </main>
+            : <main >Loading...</main >
         )
 }
 export default RankItems;
