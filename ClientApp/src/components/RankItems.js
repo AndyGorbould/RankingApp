@@ -68,7 +68,7 @@ const RankItems = ({ items, setItems, dataType, imgArr, localStorageKey }) => {
         (items != null) ?
         <main>
             <RankingGrid items={items} imgArr={imgArr} drag={drag} allowDrop={allowDrop} drop={drop} />
-                <ItemCollection item={items} drag={drag} imgArr={imgArr} />
+                <ItemCollection items={items} drag={drag} imgArr={imgArr} />
                 <button onClick={Reload} style={{"marginTop": "10px"}}>Reload</button>
             </main>
             : <main >Loading...</main >
