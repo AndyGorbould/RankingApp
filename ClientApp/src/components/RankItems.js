@@ -56,7 +56,12 @@ const RankItems = ({ items, setItems, dataType, imgArr, localStorageKey }) => {
         }
     }, [items])
 
+    useEffect(() => {
+        of(reload === true) {
 
+            getDataFromApi();
+        }
+    }, [reload])
 
     return (
         (items != null) ?
